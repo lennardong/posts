@@ -1,4 +1,4 @@
-# Efficient Uncertainty Quantification in RL Exploration with Bandit Algorithms
+# Quantifying the Unknowns: Bandit Algorithms & Efficient RL Exploration
 _Preface: This documents my introduction to bandit algorithms in the context of RL. Posting for my clarity, future reference and for others who may benefit._
 
 _Note: All diagrams are my own. Feel free to reproduce with attribution._
