@@ -9,7 +9,7 @@ In RL, decisions are made at the step- and trajectory- level:
 ### Stepwise Decisions
 A stepwise decision is an agent’s basic decision-making unit: “Given the current situation (s), which action (a) should I take?” Technically, the agent has a policy function $\pi$ that maps states to actions. This level of decision-making focuses on selecting actions in response to immediate observations.
 
-![[RL - Notes for Exploration-20250126131747614.jpg]]
+![What Action](https://private-user-images.githubusercontent.com/29778721/406716758-d4340af8-ecf9-4821-b47e-6bb0ab16679c.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzc4ODA4MTAsIm5iZiI6MTczNzg4MDUxMCwicGF0aCI6Ii8yOTc3ODcyMS80MDY3MTY3NTgtZDQzNDBhZjgtZWNmOS00ODIxLWI0N2UtNmJiMGFiMTY2NzljLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAxMjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMTI2VDA4MzUxMFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWQ2YzA3ZWYyN2U4OGVhZjIzOWIyMTk2OWU2ZmUzNmFmMWY0NjBkZWNiYzUyMDI2NzIwZjZmZjhlOGQ3Y2YxODImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.AHMSNER5-ROUdmnZW5yNgOTyYHim04Bka-Am0qLf6PQ)
 *"What action should I take?"*
 ### Trajectory Decisions
 Beyond single steps, RL cares about entire trajectories. A trajectory is denoted by  
@@ -22,14 +22,13 @@ $$
 • If the environment continues indefinitely, we use a discount factor γ to ensure rewards in the distant future are valued slightly less.  
 • If the environment has a clear end—like a board game with win/lose conditions—we call it a finite horizon.
 
-![[RL - Notes for Exploration-20250126125933484.jpg]]
+![Trajectory](https://private-user-images.githubusercontent.com/29778721/406716779-76b136ca-f94a-4f1b-8264-7c904ff5b2a0.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzc4ODA4MTAsIm5iZiI6MTczNzg4MDUxMCwicGF0aCI6Ii8yOTc3ODcyMS80MDY3MTY3NzktNzZiMTM2Y2EtZjk0YS00ZjFiLTgyNjQtN2M5MDRmZjViMmEwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAxMjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMTI2VDA4MzUxMFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWYxN2VlMjhmNzFlZDA4YzZhZWUwNzk2N2EyYmQwOGYxNmYzYjU5N2JhYzUyMjJlNTZiNTdmZmI0YWM3NmRmYmUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.WEW0ExZ7NgH8KjlEnWuSnRIXyidN1NQvsGXr_K5GQms)
 *"What is the reward?"*
 ### Where learning happens in RL
 Many modern RL algorithms adopt a policy-based approach, collecting trajectories (or batches of them) and then updating their policy parameters $\theta$ by maximizing an objective function $J(θ)$. 
 
 Compared to earlier methods such as Q-learning or SARSA, which rely heavily on tabular or simpler function approximations, policy-gradient methods let us use powerful neural networks and handle continuous action spaces more easily.
-
-![[RL - Notes for Exploration-20250126135826542.jpg]]
+![Learning](https://private-user-images.githubusercontent.com/29778721/406716795-590a799c-1428-4041-b6b3-0e778ea16ca9.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzc4ODA4MTAsIm5iZiI6MTczNzg4MDUxMCwicGF0aCI6Ii8yOTc3ODcyMS80MDY3MTY3OTUtNTkwYTc5OWMtMTQyOC00MDQxLWI2YjMtMGU3NzhlYTE2Y2E5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAxMjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMTI2VDA4MzUxMFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWQwMjYyOWRmMDI5OTBiODczMTU0NjY5N2VjMTFlNWVhODgxZTcwOTVkN2MyMDQ2ZWQ1MmFlYTk3MjlkZDJiNzYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0._g64OEm-8a0XDzLBQbi-yLpIIBXIEmmGVQn8zrxWSvg)
 
 In policy-based learning, the policy $\pi_{\theta}$​ is typically updated after collecting trajectories (or batches of trajectories). During data collection, the policy parameters $\theta$ remain fixed. Stepwise optimization within a trajectory does not happen: the action taken simply the outcome of $\theta$. 
 
@@ -96,12 +95,12 @@ For example:
 3. Exploration is expensive (e.g., large ad campaigns, robot hardware).  
 
 Here are some illustrations of what $Good$ Decisions can look like:
-![[RL - Notes for Exploration-20250125141705861.jpg|486]]
+![Trading](https://private-user-images.githubusercontent.com/29778721/406716802-6d78c0c2-b728-4967-aa7f-0817dfe77b59.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzc4ODA4MTAsIm5iZiI6MTczNzg4MDUxMCwicGF0aCI6Ii8yOTc3ODcyMS80MDY3MTY4MDItNmQ3OGMwYzItYjcyOC00OTY3LWFhN2YtMDgxN2RmZTc3YjU5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAxMjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMTI2VDA4MzUxMFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTI1NDM3YjYyYjA0MWVjOTBjYTg5MjY1MTAwNWY2Yjk2ZDNmOWQwNWYxODJjYWEyNzQxYzZlMmQ1NTUzMmRkYzgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.j1EhTNxSuu0P3Gb2nTSBod2MpFIznT6aurWDArk-n1U)
 _"Trading: Thompson Sampling (Balanced Exploration-Exploitation) vs. Greedy Strategy (Myopic Exploitation)"_  
 - _Good Decision_ = Balance exploration (testing new assets) + exploitation (capitalizing on known winners).
 - _Bad Decision_ = Blindly chasing short-term gains without probing for better options.
 
-![[RL - Notes for Exploration-20250125141528133.jpg|488]]
+![Trials](https://private-user-images.githubusercontent.com/29778721/406716820-478d407e-bf31-474a-b85c-b478948dd6f4.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzc4ODA4MTAsIm5iZiI6MTczNzg4MDUxMCwicGF0aCI6Ii8yOTc3ODcyMS80MDY3MTY4MjAtNDc4ZDQwN2UtYmYzMS00NzRhLWI4NWMtYjQ3ODk0OGRkNmY0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAxMjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMTI2VDA4MzUxMFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWJiOTBhZjY4MjNhNDlmOTg2MjBmYTFjY2YxMDJiMTRlYTNiN2ExOWVlZWI1ZGI0ZTVjMzFhNzhiMTU2MGU3ZGMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.dCfqbnEB23z_pionHORMv252DQZ0-zDgAqKq4wclT5Q)
 _"Medical Trials: Conservative UCB (Risk-Averse Prioritization) vs. Standard UCB (Overconfident Exploration)"_
 - _Good Decision_ = Prioritize patient safety by constraining exploration within ethical bounds.
 - _Bad Decision_ = Ignoring uncertainty and deploying high-risk treatments prematurely.
@@ -202,26 +201,33 @@ Trajectory-level learning ensures agents play the long game, but what about the 
 
 To ground these ideas, consider a **hierarchical RL** framework for algorithmic trading:
 - The macro planner (RL) learns to maximize portfolio returns over quarters, defining high-level goals like “reduce risk exposure.”  
-- The micro actor (bandit) handles daily trades, using UCB or Thompson sampling to execute actions (e.g., buy/sell) under the macro policy’s constraints.  
+- The micro actor (bandit) handles daily trades, using UCB or Thompson sampling to execute actions (e.g., buy/sell) under the macro policy’s constraints.
+- 
+This hierarchy mirrors human decision-making: you set yearly goals (trajectories) but make daily choices (steps) adaptively.
 
-This hierarchy mirrors human decision-making: you set yearly goals (trajectories) but make daily choices (steps) adaptively. Formally:  
-$$
-\pi_{\theta}(a|s) = \underbrace{\pi_{\text{RL}}(z|s)}_{\text{Macro Goal } z} \cdot \underbrace{\pi_{\text{Bandit}}(a|s, z)}_{\text{Stepwise Action}}.  
-$$  
+`Policy_theta(a|s) = Policy_RL(z|s) * Policy_Bandit(a|s,z)`
+
 Here, $z$ represents latent goals (e.g., “explore energy stocks”), and the bandit policy optimizes immediate actions under $z$. By explicitly modelling both timescales, we retain RL’s strategic depth while injecting bandit-like efficiency at the step level.  
 *--- End AI Contribution ---* 
 
 ...heady stuff ... more on this next time!
 
+
+
 Signing off, 
+
 Lennard Ong
+
 吾之識界，吾之世界
+
 *Wú zhī shí jiè, wú zhī shìjiè*
 
-## References
+---
 
+## References
 There's no way I learned the above from nothing. Here are the great resources I benefitted from, sharing here to support the curious learner:
 - Lectures: [Emma Brunskill - Fast RL 2](https://youtu.be/jJ7JbQBTChM?si=jaJrM1kQPJLcnGuF) 
 - Check your learning: [CS234 Coursework](https://web.stanford.edu/class/cs234/)
 - Thompson Sampling Paper:  [Thompson Sampling for Contextual Bandits with Linear Payoffs](https://arxiv.org/abs/1209.3352)
 - UCB Paper: [A Contextual-Bandit Approach to Personalized News Article Recommendation](https://arxiv.org/abs/1003.0146)
+- for AI learning support, `deepseek` has been an amazing help.
