@@ -1,6 +1,8 @@
 # Efficient Uncertainty Quantification in RL Exploration with Bandit Algorithms
 _Preface: This documents my introduction to bandit algorithms in the context of RL. Posting for my clarity, future reference and for others who may benefit._
 
+_Note: All diagrams are my own. Feel free to reproduce with attribution._
+
 ## Problem: Learning to make efficient decisions
 
 Imagine you're planning your day. Should you grab an umbrella? What's for lunch? What are your goals this year? Decision-making happens at multiple scales - and this happens as well in RL.
