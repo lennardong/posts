@@ -196,7 +196,9 @@ In theory, there could be hybrid or hierarchical models:
  To end on a high note, here's a motivating use case of the above ideas, courtesy of AI:
 
 *--- Start AI contribution ---*
+
 **Applied Ideas: Hierarchical Policies in Trading (AI generated)**
+
 Trajectory-level learning ensures agents play the long game, but what about the quality of each step? Hierarchical RL offers a solution: decompose policies into a macro-trajectory planner (RL) and micro-step actor (bandit).  
 
 To ground these ideas, consider a **hierarchical RL** framework for algorithmic trading:
@@ -208,6 +210,7 @@ This hierarchy mirrors human decision-making: you set yearly goals (trajectories
 `Policy_theta(a|s) = Policy_RL(z|s) * Policy_Bandit(a|s,z)`
 
 Here, $z$ represents latent goals (e.g., “explore energy stocks”), and the bandit policy optimizes immediate actions under $z$. By explicitly modelling both timescales, we retain RL’s strategic depth while injecting bandit-like efficiency at the step level.  
+
 *--- End AI Contribution ---* 
 
 ...heady stuff ... more on this next time!
